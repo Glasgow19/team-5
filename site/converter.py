@@ -11,6 +11,6 @@ cols=["Alternative exhibit names","Visitor experience","Visitor interaction tips
 df.drop(cols, axis=1, inplace=True)
 
 d = df.to_dict(orient='records')
-# DUMP TO FILE
+# DUMP to FILE
 with open('db.json', 'w', encoding='utf-8') as f:
     json.dump(d, f, ensure_ascii=False, indent=4)
