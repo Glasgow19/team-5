@@ -40,7 +40,8 @@
 									</div>
 								</div>
 							</section>
-
+					</div>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -52,41 +53,51 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-			var flag = "default"; // CHANGE THIS
+			var flagSight = "default";
+			var flagHearing= "default";
+			var flagOther = "default";
 			document.addEventListener('click',function(e){
 
 				if(e.target && e.target.id=="hearing"){
-					if(flag === "hearing"){
-						document.getElementById("hearing").style.color = "gray"
-						flag = "default"; // CHANGE THIS
+					if(flagHearing === "hearing"){
+						document.getElementById("hearing").style.color = "gray";
+						flagHearing = "default"; // CHANGE THIS
+						localStorage.setItem('hearing',flagHearing);
 					}else{
-						document.getElementById("hearing").style.color = "purple"
-						flag = "hearing";
+						document.getElementById("hearing").style.color = "purple";
+						flagHearing = "hearing";
+						localStorage.setItem('hearing',flagHearing);
 					}
 
 				}
 
 				if(e.target && e.target.id=="sight"){
-					if(flag === "sight"){
-						document.getElementById("sight").style.color = "gray"
-						flag = "default"; // CHANGE THIS
+					if(flagSight === "sight"){
+						document.getElementById("sight").style.color = "gray";
+						flagSight = "default"; // CHANGE THIS
+						localStorage.setItem('sight',flagSight);
 					}else{
-						document.getElementById("sight").style.color = "purple"
-						flag = "sight";   // CHANGE THIS
+						document.getElementById("sight").style.color = "purple";
+						flagSight = "sight";   // CHANGE THIS
+						localStorage.setItem('sight',flagSight);
 					}
 
 				}
 
 				if(e.target && e.target.id=="tempOther"){
-					if(flag === "Other"){
-						document.getElementById("tempOther").style.color = "gray"
-						flag = "default";
+					if(flagOther === "Other"){
+						document.getElementById("tempOther").style.color = "gray";
+						flagOther = "default";
+						localStorage.setItem('other',flagOther);
+
 					}else{
-						document.getElementById("tempOther").style.color = "purple"
-						flag = "Other";
+						document.getElementById("tempOther").style.color = "purple";
+						flagOther = "Other";
+						localStorage.setItem('other',flagOther);
 					}
 
 				}
+
 			}) </script>
 
 	</body>
