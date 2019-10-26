@@ -1,0 +1,13 @@
+{
+  "name": "cfg19",
+  "homepage": "https://github.com/Glasgow19/team-5",
+  "authors": [
+    "Anelacu <mmm.lll.2000@gmail.com>"
+  ],
+  "description": "0",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "qcode-decoder": "^0.1.0"
+  }
+}
