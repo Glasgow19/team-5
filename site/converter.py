@@ -9,7 +9,7 @@ cols=["Alternative exhibit names","Visitor experience","Visitor interaction tips
 "Photo 2 filename","Photo 2 link"]
 # DROP THE COLUMNS
 df.drop(cols, axis=1, inplace=True)
-
+df.insert(0, 'id', range(0, 0 + len(df)))
 d = df.to_dict(orient='records')
 # DUMP to FILE
 with open('db.json', 'w', encoding='utf-8') as f:
