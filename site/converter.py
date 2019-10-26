@@ -12,6 +12,8 @@ cols=["Alternative exhibit names","Visitor experience","Visitor interaction tips
 
 # DROP THE COLUMNS
 df.drop(cols, axis=1, inplace=True)
+
+#DONT CHANGE THESE
 df = df.replace(np.nan, '', regex=True)
 df.insert(0, 'id', range(0, 0 + len(df)))
 d = df.to_dict(orient='records')
