@@ -1,3 +1,5 @@
+{% extends "template.html" %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -11,11 +13,7 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<img src="images/logo.jpeg" alt="" />
-					</header>
+            {% block content %}
 
 				<!-- Main -->
 					<div id="main">
@@ -35,24 +33,12 @@
                       <i id="tempOther" class="fas fa-wheelchair fa-7x"></i>
                     </ul>
 										<ul class="actions">
-											<li><a href="levels.html" class="button">Submit</a></li>
+											<li><a href="{{ url_for('levels') }}" class="button">Submit</a></li>
 										</ul>
 									</div>
 								</div>
 							</section>
-					</div>
-			</div>
-
-		<!-- Scripts -->
-			 <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/jquery.scrollex.min.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/jquery.scrolly.min.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/breakpoints.min.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
-
-			<script>
+                <script>
 			var flagSight = "default";
 			var flagHearing= "default";
 			var flagOther = "default";
@@ -99,6 +85,21 @@
 				}
 
 			}) </script>
+            {% endblock %}
+
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			 <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrollex.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/breakpoints.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
+
+
 
 	</body>
 </html>

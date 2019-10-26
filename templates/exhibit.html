@@ -1,3 +1,5 @@
+{% extends "template.html" %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -11,11 +13,7 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<img src="images/logo.jpeg" alt="" />
-					</header>
+                {% block content %}
 
 				<!-- Main -->
 					<div id="main">
@@ -33,6 +31,8 @@
                   </div>
 								</div>
 							</section>
+                                        {% endblock %}
+
 
 
 		<!-- Scripts -->

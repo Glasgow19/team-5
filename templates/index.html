@@ -1,3 +1,5 @@
+{% extends "template.html" %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -9,9 +11,7 @@
 	</head>
 	<body class="is-preload">
 			<div id="wrapper">
-					<header id="header" class="alt">
-						<img src="images/logo.jpeg" alt="" />
-					</header>
+                    {% block content %}
 					<div id="main">
 							<section id="intro" class="main">
 								<div class="spotlight">
@@ -20,11 +20,13 @@
 											<h2><b>Enjoy your visit!</b></h2>
 										</header>
 										<ul class="actions">
-											<li><a href="choice.html" class="button">Continue</a></li>
+											<li><a href="{{ url_for('levels') }}" class="button">Continue</a></li>
 										</ul>
 									</div>
 								</div>
 							</section>
+                    {% endblock %}
+
                     </div>
             </div>
 
