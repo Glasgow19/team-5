@@ -1819,6 +1819,36 @@ input, select, textarea {
 		text-decoration: bold;
 		white-space: nowrap;
 	}
+	.buttonyes {
+		background-color: green;
+		text-decoration-color: white;
+		border-radius: 8px;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		height: 2.75em;
+		line-height: 2.75em;
+		min-width: 9.25em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: bold;
+		white-space: nowrap;
+	}
+	.buttonno {
+		background-color: red;
+		text-decoration-color: white;
+		border-radius: 8px;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		height: 2.75em;
+		line-height: 2.75em;
+		min-width: 9.25em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: bold;
+		white-space: nowrap;
+	}
 
 		input[type="submit"].icon,
 		input[type="reset"].icon,
