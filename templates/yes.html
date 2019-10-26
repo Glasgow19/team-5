@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Glasgow Science Centre</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<img src="images/logo.jpeg" alt="" />
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>Please select Accessability Feature.</b></h2>
+										</header>
+										<ul class="actions">
+											<i id="hearing" class="fas fa-deaf fa-7x"></i>
+										</ul>
+                    <ul class="actions">
+                      <i id="sight" class="far fa-eye-slash fa-7x"></i>
+                    </ul>
+                    <ul class="actions">
+                      <i id="tempOther" class="fas fa-wheelchair fa-7x"></i>
+                    </ul>
+										<ul class="actions">
+											<li><a href="levels.html" class="button">Submit</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			 <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrollex.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/breakpoints.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
+
+			<script>
+			var flagSight = "default";
+			var flagHearing= "default";
+			var flagOther = "default";
+			document.addEventListener('click',function(e){
+
+				if(e.target && e.target.id=="hearing"){
+					if(flagHearing === "hearing"){
+						document.getElementById("hearing").style.color = "gray";
+						flagHearing = "default"; // CHANGE THIS
+						localStorage.setItem('hearing',flagHearing);
+					}else{
+						document.getElementById("hearing").style.color = "purple";
+						flagHearing = "hearing";
+						localStorage.setItem('hearing',flagHearing);
+					}
+
+				}
+
+				if(e.target && e.target.id=="sight"){
+					if(flagSight === "sight"){
+						document.getElementById("sight").style.color = "gray";
+						flagSight = "default"; // CHANGE THIS
+						localStorage.setItem('sight',flagSight);
+					}else{
+						document.getElementById("sight").style.color = "purple";
+						flagSight = "sight";   // CHANGE THIS
+						localStorage.setItem('sight',flagSight);
+					}
+
+				}
+
+				if(e.target && e.target.id=="tempOther"){
+					if(flagOther === "Other"){
+						document.getElementById("tempOther").style.color = "gray";
+						flagOther = "default";
+						localStorage.setItem('other',flagOther);
+
+					}else{
+						document.getElementById("tempOther").style.color = "purple";
+						flagOther = "Other";
+						localStorage.setItem('other',flagOther);
+					}
+
+				}
+
+			}) </script>
+
+	</body>
+</html>
