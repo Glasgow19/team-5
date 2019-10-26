@@ -20,20 +20,30 @@
 
  </head>
 
- <body>
 
- <button class="button" onclick="testScript()"> Press to continue! </button>
+ <button class="button" onclick="disabilityYes()"> Accessability mode. </button>
+ <button class="button" onclick="disabilityNo()"> Standard mode. </button>
 
  </body>
 
  <script>
-function testScript() {
+function disabilityYes() {
   var txt;
-  var disability = prompt("Please enter your disability:", "");
-  if (disability == null || person == "") {
-    txt = "User cancelled the prompt.";
+  var r = confirm("You chose that you have a disability\n Is this correct?.\n");
+  if (r == true) {
+    txt = "Enjoy your visit!";
   } else {
-    txt = "We will do our best to accomodate " + person + "! Enjoy your visit";
+    txt = "You pressed Cancel!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+function disabilityNo() {
+  var txt;
+  var r = confirm("You chose that you do not have a disability\n Is this correct?.\n");
+  if (r == true) {
+    txt = "Enjoy your visit!";
+  } else {
+    txt = "You pressed Cancel!";
   }
   document.getElementById("demo").innerHTML = txt;
 }
