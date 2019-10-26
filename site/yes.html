@@ -26,14 +26,17 @@
 											<h2><b>Please select Accessability Feature.</b></h2>
 										</header>
 										<ul class="actions">
-											<i class="fas fa-deaf fa-7x"></i>
+											<i id="hearing" class="fas fa-deaf fa-7x"></i>
 										</ul>
                     <ul class="actions">
-                      <i class="far fa-eye-slash fa-7x"></i>
+                      <i id="sight" class="far fa-eye-slash fa-7x"></i>
                     </ul>
                     <ul class="actions">
-                      <i class="fas fa-wheelchair fa-7x"></i>
+                      <i id="tempOther" class="fas fa-wheelchair fa-7x"></i>
                     </ul>
+										<ul class="actions">
+											<li><a href="levels.html" class="button">Submit</a></li>
+										</ul>
 									</div>
 								</div>
 							</section>
@@ -47,6 +50,44 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+			var flag = "default"; // CHANGE THIS
+			document.addEventListener('click',function(e){
+
+				if(e.target && e.target.id=="hearing"){
+					if(flag === "hearing"){
+						document.getElementById("hearing").style.color = "gray"
+						flag = "default";
+					}else{
+						document.getElementById("hearing").style.color = "purple"
+						flag = "hearing";
+					}
+
+				}
+
+				if(e.target && e.target.id=="sight"){
+					if(flag === "sight"){
+						document.getElementById("sight").style.color = "gray"
+						flag = "default";
+					}else{
+						document.getElementById("sight").style.color = "purple"
+						flag = "sight";
+					}
+
+				}
+
+				if(e.target && e.target.id=="tempOther"){
+					if(flag === "Other"){
+						document.getElementById("tempOther").style.color = "gray"
+						flag = "default";
+					}else{
+						document.getElementById("tempOther").style.color = "purple"
+						flag = "Other";
+					}
+
+				}
+			}) </script>
 
 	</body>
 </html>
