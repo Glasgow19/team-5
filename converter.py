@@ -19,6 +19,6 @@ df.insert(0, 'id', range(0, 0 + len(df)))
 df["links"] = "https://www.glasgowsciencecentre.org/"
 d = df.to_dict(orient='records')
 
-# DUMP to FILE
+# DUMP TO FILE
 with open('db.json', 'w', encoding='utf-8') as f:
     json.dump(d, f, ensure_ascii=True, indent=4)
