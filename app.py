@@ -24,9 +24,24 @@ def home():
 def exhibit():
     with open('db.json') as json_file:
         data = json.load(json_file)
-    test = data[0]
     exhibit_id = request.args.get('id',default=1,type=int)
-    return render_template("exhibit.html", exhibit_description=data[exhibit_id]['Description'],exhibit_name=data[exhibit_id]['Exhibit name'])
+
+    test = data[exhibit_id]['HOH']
+
+    if data[exhibit_id]['HOH'] == 'True':
+       hearing = 'style = "color : purple"'
+    else:
+        hearing = ""
+    if data[exhibit_id]['HOS'] == "True":
+       hearing = 'style = "color : purple"'
+    else:
+        sight = ""
+    if data[exhibit_id]['HOM'] == "True":
+       hearing = 'style = "color : purple"'
+    else:
+        other = ""
+
+    return render_template("exhibit.html", exhibit_description=data[exhibit_id]['Description'],exhibit_name=data[exhibit_id]['Exhibit name'],sight=sight,hearing=hearing,other=other)
 
 
 @app.route('/choice')

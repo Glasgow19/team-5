@@ -1440,3 +1440,17 @@ ol, ul {
 		.form-container .btn:hover, .open-button:hover {
 		  opacity: 1;
 		}		
+		#speaker{
+			    width: 15vw;
+    			height: 8vh;
+    			background-color: white;
+				border-style: solid;
+				border-width: 2px;
+		}
+		#mic{
+			    width: 15vw;
+    			height: 8vh;
+    			background-color: white;
+				border-style: solid;
+				border-width: 2px;
+		}
