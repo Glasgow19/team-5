@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AWS SDK for JavaScript - Browser Getting Started Application</title>
+  </head>
+
+  <body>
+    <div id="textToSynth">
+      <button class="btn default" id = "synt" onclick="speakText()">Synthesize</button>
+    </div>
+    <script>
+      function speakText() {
+      var msg = new SpeechSynthesisUtterance('Hello');
+      window.speechSynthesis.speak(msg);
+    }
+    </script>
