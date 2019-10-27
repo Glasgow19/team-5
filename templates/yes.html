@@ -42,6 +42,11 @@
 			var flagSight = "default";
 			var flagHearing= "default";
 			var flagOther = "default";
+            localStorage.removeItem('hearing');
+            localStorage.removeItem('sight');
+            localStorage.removeItem('other');
+
+
 			document.addEventListener('click',function(e){
 
 				if(e.target && e.target.id=="hearing"){
