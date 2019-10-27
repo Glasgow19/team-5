@@ -1,27 +1,37 @@
+{% extends "template.html" %}
+
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Glasgow Science Centre</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" />
+		<link rel="stylesheet" href="{{url_for('static' , filename = 'css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',    filename='') }}" /></noscript>
 	</head>
 	<body class="is-preload">
-
-		<!-- Wrapper -->
 			<div id="wrapper">
+                    {% block content %}
+					<div id="main">
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>Let's get started!</b></h2>
+										</header>
+										<ul class="actions">
+											<li><a href="{{ url_for('choice') }}" class="button">Continue</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+                    {% endblock %}
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<img src="{{ url_for('static',    filename='images/logo.jpeg') }}" alt="" />
-					</header>
-                {% block content %}
-                {% endblock %}
+                    </div>
             </div>
 
-    </body>
-
-            <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
+		<!-- Scripts -->
+			 <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/jquery.scrollex.min.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/jquery.scrolly.min.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
@@ -29,4 +39,5 @@
             <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
 
+	</body>
 </html>

@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Glasgow Science Centre</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+                {% block content %}
+
+				<!-- Main -->
+					<div id="main">
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>{{ exhibit_name }}</b></h2> <!-- CHANGE THIS-->
+										</header>
+          						<img src="images/demo.jpeg" alt="" /> <!-- CHANGE THIS-->
+										<p>{{ exhibit_description }}</p>
+                  <h2><b>FURTHER</b></h2>
+                  <p><a href = "https://www.sciencealert.com/13-science-facts-never-learned-high-school-2018"> LINKS </a></p>  <!-- CHANGE THIS-->
+                    <img src="images/demo.jpeg" alt="" /> <!-- CHANGE THIS-->
+                  </div>
+								</div>
+							</section>
+                                <script src="{{ url_for('static',    filename='scripts/exhibit.js') }}"></script>
+
+                                        {% endblock %}
+
+
+
+		<!-- Scripts -->
+			 <script src="{{ url_for('static',    filename='scripts/jquery.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrollex.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/breakpoints.min.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
+            <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
+
+
+	</body>
+</html>

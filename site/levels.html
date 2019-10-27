@@ -8,8 +8,39 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
+	<div id="titleAndNavi">
+		<div id="controlNav" class="controlNav">
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		</div>
+		<div id="Title" class="navTile">Levels
+		</div>
+	</div>
 			<div id="wrapper">
+
+				<div id="mySidenav" class="sidenav">
+					<div class="exit">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					</div>
+					<div class="qrCode">
+						<div id="qrPic">
+
+						</div>
+						<div id="qrText">
+							QR
+						</div>
+					</div>
+					<div class="List">
+						<div id="listPic">
+
+						</div>
+						<div id="listText">
+							List
+						</div>
+					</div>
+
+
+				</div>
+
 					<header id="header" class="alt">
 						<img src="images/logo.jpeg" alt="" />
 					</header>
@@ -35,7 +66,8 @@
 									</div>
 								</div>
 							</section>
-
+					</div>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -45,6 +77,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function openNav() {
+					document.getElementById("mySidenav").style.width = "30%";
+				}
+
+				function closeNav() {
+					document.getElementById("mySidenav").style.width = "0";
+				}
+			</script>
 
 	</body>
 </html>
