@@ -9,9 +9,11 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
+
 @app.route('/about')
 def about():
     return render_template("about.html")
+
 
 @app.route('/home')
 def home():
@@ -25,6 +27,7 @@ def exhibit():
     test = data[0]
     exhibit_id = request.args.get('id',default=1,type=int)
     return render_template("exhibit.html", exhibit_description=data[exhibit_id]['Description'],exhibit_name=data[exhibit_id]['Exhibit name'])
+
 
 @app.route('/choice')
 def choice():
@@ -45,9 +48,11 @@ def qr():
 def yes():
     return render_template("yes.html")
 
+
 @app.route('/index')
 def index():
     return render_template("index.html")
+
 
 @app.route('/tts')
 def tts():
