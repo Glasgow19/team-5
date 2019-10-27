@@ -1418,6 +1418,7 @@ body.is-preload #header.alt .logo {
 	width: 100vw;
 	position: absolute;
 	background: white;
+
 }
 .controlNav{
 	float: left;
@@ -1434,3 +1435,14 @@ body.is-preload #header.alt .logo {
 	line-height: 9vw;
 	padding-right: 12vw;
 }
+
+#listText{
+	color: white;
+	padding-bottom: 5px;
+}
+#qrText{
+	color: white;
+	padding: 10px;
+}
+
+

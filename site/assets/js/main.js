@@ -119,5 +119,11 @@
 		$('.scrolly').scrolly({
 			speed: 1000
 		});
+	document.getElementById("qrCode").addEventListener('click',function(){
+		window.location.href='/qr';
+	})
+	document.getElementById("listDiv").addEventListener('click',function(){
+		window.location.href='/list';
+	})
 
 })(jQuery);
