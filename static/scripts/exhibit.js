@@ -1,26 +1,28 @@
 if(localStorage.getItem('sight')){
-    document.getElementById('disabilities').innerText+="This is friends to visually impaired!"
-    var text = "Exhibition!";
+    sendQuery();
+
+
+}
+
+
+document.getElementById("mic").addEventListener('click',startDictation);
+document.getElementById("speaker").addEventListener('click',function () {
+    sendQuery(getText());
+});
+
+function getText(){
+    let text = "Exhibition!";
      text+= document.getElementById('name').innerText;
      text+= " !Description";
      text +=document.getElementById('description').innerText;
-    try {
-            sendQuery(text);
-
-} catch(e) {
-    console.log(e);
-}
-}
-if(localStorage.getItem('hearing')){
-    document.getElementById('disabilities').innerText+="This is friends to hearing impaired!"
-}
-if(localStorage.getItem('other')){
-    document.getElementById('disabilities').innerText+="This is friends to mobility impaired!"
+     let test = document.getElementById('description').innerText;
+     return text;
 }
 
-
-function sendQuery(text){
-
+function sendQuery(text,callback){
+    if(!text || text==""){
+            text = getText();
+    }
 
         var request = JSON.stringify({text:text});
         console.log(request);
@@ -32,12 +34,7 @@ function sendQuery(text){
                 var test = atob(this.responseText);
                 console.log(test);
                 var snd = new Audio("data:audio/mp3;base64," + this.responseText);
-                snd.play().catch(function(error){
-
-                });
-
-
-
+                snd.play().then(callback);
             }
             else{
                 console.log("No response");
@@ -47,3 +44,44 @@ function sendQuery(text){
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(request);
     }
+
+
+    function startDictation() {
+
+    sendQuery("Please say if you are happy or sad!",function () {
+        if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        changeColor(e.results[0][0].transcript);
+        recognition.stop();
+
+      };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+    });
+
+
+  }
+  function changeColor(text) {
+    if(text.includes("sad")){
+        document.getElementById("mic").style.backgroundColor = "red";
+
+    }
+    else if(text.includes("happy")){
+        document.getElementById("mic").style.backgroundColor = "green";
+    }
+
+  }
+  

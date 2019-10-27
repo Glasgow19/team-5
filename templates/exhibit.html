@@ -13,8 +13,19 @@
 
 
 			<div id="wrapper">
+
                 {% block content %}
-                <p id="disabilities"></p>
+                    <img id= "speaker" src="{{ url_for('static', filename='images/speaker.png') }}">
+                    <img id= "mic" src="{{ url_for('static', filename='images/mic.png') }}">
+
+
+                   <i id="hearing" class="fas fa-deaf fa-3x" {{ hearing }}></i>
+                    <i id="sight" class="far fa-eye-slash fa-3x {{ sight }}"></i>
+                    <i id="tempOther" class="fas fa-wheelchair fa-3x"{{ other }}></i>
+
+
+
+
 				<!-- Main -->
 					<div id="main">
 							<section id="intro" class="main">
@@ -26,7 +37,7 @@
           						<img src="images/demo.jpeg" alt="" /> <!-- CHANGE THIS-->
 										<p id="description">{{ exhibit_description }}</p>
                   <h2><b>FURTHER</b></h2>
-                  <p><a href = "https://www.sciencealert.com/13-science-facts-never-learned-high-school-2018"> LINKS </a></p>  <!-- CHANGE THIS-->
+                  <p><a href = "https://www.sciencealert.com/13-science-facts-never-learned-high-school-2018" class="button"> Learn More </a></p>  <!-- CHANGE THIS-->
                     <img src="images/demo.jpeg" alt="" /> <!-- CHANGE THIS-->
                   </div>
 								</div>

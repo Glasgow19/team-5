@@ -4,7 +4,7 @@ import numpy as np
 import random
 
 # READ THE EXCEL FILE
-df = pd.read_excel("db.xlsx")
+df = pd.read_excel("database.xlsx")
 
 # COLUMNS TO REMOVE
 cols=["Alternative exhibit names","Visitor experience","Visitor interaction tips",
@@ -25,4 +25,4 @@ d = df.to_dict(orient='records')
 
 # DUMP to FILE
 with open('db.json', 'w', encoding='utf-8') as f:
-    json.dump(d, f, ensure_ascii=False, indent=4)
+    json.dump(d, f, ensure_ascii=True, indent=4)
