@@ -6,8 +6,8 @@
 		<title>Glasgow Science Centre</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" /></noscript>
+		<link rel="stylesheet" href="{{url_for('static' , filename = 'css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',    filename='') }}" /></noscript>
 	</head>
 	<body class="is-preload">
 			<div id="wrapper">
@@ -17,10 +17,10 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2><b>Enjoy your visit!</b></h2>
+											<h2><b>Let's get started!</b></h2>
 										</header>
 										<ul class="actions">
-											<li><a href="{{ url_for('levels') }}" class="button">Continue</a></li>
+											<li><a href="{{ url_for('choice') }}" class="button">Continue</a></li>
 										</ul>
 									</div>
 								</div>

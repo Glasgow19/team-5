@@ -5,8 +5,8 @@
 		<title>Glasgow Science Centre</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" /></noscript>
+		<link rel="stylesheet" href="{{ url_for('static',    filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static',    filename='css/noscript.css') }}" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -22,16 +22,16 @@
 											<h2><b>Please select your floor.</b></h2>
 										</header>
 										<ul class="actions">
-											<li><a href="map.html" class="button">G</a></li>
+											<li><a href="{{ url_for('qr') }}" class="button">G</a></li>
 										</ul>
                     <ul class="actions">
-											<li><a href="map.html" class="button">1</a></li>
+											<li><a href="{{ url_for('qr') }}" class="button">1</a></li>
 										</ul>
                     <ul class="actions">
-											<li><a href="map.html" class="button">2</a></li>
+											<li><a href="{{ url_for('qr') }}" class="button">2</a></li>
 										</ul>
 										<ul class="actions">
-											<li><a href="map.html" class="button">3</a></li>
+											<li><a href="{{ url_for('qr') }}" class="button">3</a></li>
 										</ul>
 									</div>
 								</div>

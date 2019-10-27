@@ -1,4 +1,5 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
+import json
 
 app = Flask(__name__)
 
@@ -18,7 +19,11 @@ def home():
 
 @app.route('/exhibit')
 def exhibit():
-    return render_template("exhibit.html")
+    with open('db.json') as json_file:
+        data = json.load(json_file)
+    test = data[0]
+    exhibit_id = request.args.get('id',default=1,type=int)
+    return render_template("exhibit.html", exhibit_description=data[exhibit_id]['Description'],exhibit_name=data[exhibit_id]['Exhibit name'])
 
 @app.route('/choice')
 def choice():

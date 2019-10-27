@@ -48,11 +48,11 @@
 					if(flagHearing === "hearing"){
 						document.getElementById("hearing").style.color = "gray";
 						flagHearing = "default"; // CHANGE THIS
-						localStorage.setItem('hearing',flagHearing);
+						localStorage.removeItem('hearing');
 					}else{
 						document.getElementById("hearing").style.color = "purple";
 						flagHearing = "hearing";
-						localStorage.setItem('hearing',flagHearing);
+						localStorage.setItem('hearing',"true");
 					}
 
 				}
@@ -61,11 +61,11 @@
 					if(flagSight === "sight"){
 						document.getElementById("sight").style.color = "gray";
 						flagSight = "default"; // CHANGE THIS
-						localStorage.setItem('sight',flagSight);
+						localStorage.removeItem('sight');
 					}else{
 						document.getElementById("sight").style.color = "purple";
 						flagSight = "sight";   // CHANGE THIS
-						localStorage.setItem('sight',flagSight);
+						localStorage.setItem('sight',"true");
 					}
 
 				}
@@ -74,12 +74,12 @@
 					if(flagOther === "Other"){
 						document.getElementById("tempOther").style.color = "gray";
 						flagOther = "default";
-						localStorage.setItem('other',flagOther);
+						localStorage.removeItem('other');
 
 					}else{
 						document.getElementById("tempOther").style.color = "purple";
 						flagOther = "Other";
-						localStorage.setItem('other',flagOther);
+						localStorage.setItem('other',"true");
 					}
 
 				}
@@ -97,7 +97,6 @@
             <script src="{{ url_for('static',    filename='scripts/browser.min.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/breakpoints.min.js') }}"></script>
             <script src="{{ url_for('static',    filename='scripts/util.js') }}"></script>
-            <script src="{{ url_for('static',    filename='scripts/main.js') }}"></script>
 
 
 
