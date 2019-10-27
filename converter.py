@@ -14,7 +14,7 @@ cols=["Alternative exhibit names","Visitor experience","Visitor interaction tips
 df.drop(cols, axis=1, inplace=True)
 
 #DONT CHANGE THESE
-df = df.replace(np.nan, '', regex=True)
+df = df.replace(np.nan, 'Description not available', regex=True)
 df.insert(0, 'id', range(0, 0 + len(df)))
 df["links"] = "https://www.glasgowsciencecentre.org/"
 d = df.to_dict(orient='records')
