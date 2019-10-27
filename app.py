@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request
 import json
-import googleTTS
+#import googleTTS
 
 app = Flask(__name__)
 
@@ -65,4 +65,4 @@ def tts_api():
     return response
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=80)

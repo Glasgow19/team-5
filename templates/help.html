@@ -89,13 +89,13 @@ body {
 <button class="open-button" onclick="openForm()">Chat</button>
 
 <div class="chat-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
+  <form class="form-container">
     <h1><font style = "color:white">Chat</font></h1>
 
     <label for="msg"><b><font style="size:30px">Message</font></b></label>
     <textarea placeholder="Type message.." name="msg" required></textarea>
 
-    <button type="submit" class="btn">Send</button>
+    <button type="submit" class="btn" onclick="sendMail()" method="post">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
@@ -107,6 +107,10 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+}
+
+function sendMail(){
+  window.open('mailto:ivananikitin98gmail.com?subject=subject&body=body');
 }
 </script>
 
