@@ -121,9 +121,12 @@
 		});
 	document.getElementById("qrCode").addEventListener('click',function(){
 		window.location.href='/qr';
-	})
+	});
 	document.getElementById("listDiv").addEventListener('click',function(){
 		window.location.href='/list';
-	})
+	});
+	document.getElementById("helpDiv").addEventListener('click',function(){
+		window.location.href='/list';
+	});
 
 })(jQuery);
