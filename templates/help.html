@@ -93,7 +93,7 @@ body {
     <h1><font style = "color:white">Chat</font></h1>
 
     <label for="msg"><b><font style="size:30px">Message</font></b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+    <textarea id = "msg" placeholder="Type message.." name="msg" required></textarea>
 
     <button type="submit" class="btn" onclick="sendMail()" method="post">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -109,8 +109,13 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-function sendMail(){
-  window.open('mailto:ivananikitin98gmail.com?subject=subject&body=body');
+function sendMail() {
+    var link = "mailto:me@example.com"
+             + "?cc=myCCaddress@example.com"
+             + "&subject=" + escape("This is my subject")
+             + "&body=" + escape(document.getElementById('msg').value)
+    ;
+    window.location.href = link;
 }
 </script>
 
