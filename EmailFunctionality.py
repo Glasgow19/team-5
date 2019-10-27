@@ -9,7 +9,7 @@ Created on Sun Oct 27 09:29:21 2019
 import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import requests 
+import requests
 import time
 from flask import Flask
 from flask_mail import Message, Mail
@@ -18,20 +18,22 @@ from flask_mail import Message, Mail
 @app.route("/")
 
 def server():
+    pass
+    
+def send_mail():
     smtp_server = "smtp.gmail.com"
-#port = 587  # For starttls
+    #port = 587  # For starttls
     sender_email = "team5c4g@gmail.com"
     password = "PaSsWoRd1"
 
 receiver_email="maslinkin@gmail.com"
-def send_mail():
 # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = "test"
+    msg['Subject'] = "Help Request."
     msg['From'] = "Team5"
     msg['To'] = "maslinkin@gmail.com"
 
-    text = "Try Me!"
+    text = "Please send help to exhibit 3."
 
     # Record the MIME types of both parts - text/plain and text/html.
     part1 = MIMEText(text, 'plain')
@@ -43,7 +45,7 @@ def send_mail():
     print("SSL DONE...")
 
     with smtplib.SMTP(smtp_server, port) as server:
-        print("STARTED...") 
+        print("STARTED...")
         server.ehlo()  # Can be omitted
         server.starttls(context=context)
         server.ehlo()  # Can be omitted
@@ -55,6 +57,5 @@ def send_mail():
         print("Sent...")
         server.quit()
 
-   
+
 send_mail()
-   

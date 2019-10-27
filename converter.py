@@ -18,9 +18,9 @@ df.drop(cols, axis=1, inplace=True)
 df = df.replace(np.nan, '', regex=True)
 df.insert(0, 'id', range(0, 0 + len(df)))
 df["links"] = "https://www.glasgowsciencecentre.org/"
-df["HOH"] = [random.choice([True, False]) for k in df.index] # HARD OF HEARING
-df["HOS"] = [random.choice([True, False]) for k in df.index] # HARD OF SIGHT
-df["HOM"] = [random.choice([True, False]) for k in df.index] # HARD OF MOBILITY
+df["HOH"] = [random.choice(["True", "False"]) for k in df.index] # HARD OF HEARING
+df["HOS"] = [random.choice(["True", "False"]) for k in df.index] # HARD OF SIGHT
+df["HOM"] = [random.choice(["True", "False"]) for k in df.index] # HARD OF MOBILITY
 d = df.to_dict(orient='records')
 
 # DUMP to FILE
