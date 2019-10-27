@@ -60,6 +60,7 @@ function sendQuery(text,callback){
       recognition.start();
 
       recognition.onresult = function(e) {
+          console.log(e.results[0][0].transcript);
         changeColor(e.results[0][0].transcript);
         recognition.stop();
 
@@ -76,11 +77,11 @@ function sendQuery(text,callback){
   }
   function changeColor(text) {
     if(text.includes("sad")){
-        document.getElementById("mic").style.backgroundColor = "red";
+        document.getElementById("mic").style.color = "red";
 
     }
     else if(text.includes("happy")){
-        document.getElementById("mic").style.backgroundColor = "green";
+        document.getElementById("mic").style.color = "green";
     }
 
   }
